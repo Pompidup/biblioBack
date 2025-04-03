@@ -15,12 +15,15 @@ import { dirname } from 'path';
 import dotenv from 'dotenv';
 
 dotenv.config();
-if (!fs.existsSync(path.join(__dirname, 'tmp'))) {
-    fs.mkdirSync(path.join(__dirname, 'tmp'));
-}
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// ✅ Création du dossier tmp s'il n'existe pas (important pour Render)
+const tmpDir = path.join(__dirname, 'tmp');
+if (!fs.existsSync(tmpDir)) {
+  fs.mkdirSync(tmpDir);
+}
 const fastify = Fastify();
 await fastify.register(multipart);
 
