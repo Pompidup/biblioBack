@@ -78,6 +78,6 @@ fastify.post('/books/upload', async function (req, reply) {
 });
 
 const PORT = process.env.PORT || 3000;
-fastify.listen({ port: PORT }, () => {
+fastify.listen({ port: PORT, host: '0.0.0.0' }, () => {
     console.log('📚 Backend ScanBiblio démarré sur http://localhost:3000');
 });
