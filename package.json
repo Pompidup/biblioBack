@@ -1,0 +1,19 @@
+{
+  "name": "scanbiblio-backend",
+  "version": "1.0.0",
+  "description": "Backend for ScanBiblio - Extracts text from book spines using Google Vision and fetches book info via Google Books API",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^7.6.0",
+    "@google-cloud/vision": "^5.1.0",
+    "dotenv": "^16.4.7",
+    "fastify": "^4.26.0",
+    "node-fetch": "^3.3.2",
+    "uuid": "^9.0.0"
+  }
+}
